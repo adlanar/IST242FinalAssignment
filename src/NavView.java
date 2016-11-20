@@ -1,4 +1,4 @@
-
+//ours
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 
@@ -16,7 +16,7 @@ public class NavView extends JFrame{
     
     NavView(NavModel model)
     {
-        super("Primary View");
+        super("The College Struggle");
         this.model = model;
                           
         setSize(700, 500);
@@ -41,6 +41,15 @@ public class NavView extends JFrame{
         nVpanel.addMain(m_view);        
     }
     
+    // Adam added same format as template 
+    public void switchToInstuctionsPanel(InstructionsView i_view)
+    {
+        nVpanel.removeSplash();
+        nVpanel.removeMain();
+        nVpanel.removeOptions();
+        nVpanel.addInstructions(i_view);        
+    }
+    
     
     public void addOptionsButtonListener(ActionListener al) 
     {    
@@ -50,7 +59,13 @@ public class NavView extends JFrame{
     public void addMainButtonListener(ActionListener al) 
     {    
         nVpanel.menu.mainButton.addActionListener(al);
-    }       
+    } 
+
+    // Adam added same format as template
+    public void addInstructionsButtonListener(ActionListener al) 
+    {    
+        nVpanel.menu.instructionsButton.addActionListener(al);
+    }  
     
     
     //TODO: Add listeners to switch to other Panels

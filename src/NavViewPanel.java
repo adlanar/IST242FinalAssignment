@@ -1,4 +1,4 @@
-
+//ours
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 
@@ -13,6 +13,8 @@ public class NavViewPanel extends JPanel{
     
     OptionsView o_view;
     MainView m_view;
+    // Adam added
+    InstructionsView i_view;
     
     public NavViewPanel() {
         super();
@@ -41,6 +43,15 @@ public class NavViewPanel extends JPanel{
         add(m_view, BorderLayout.CENTER);
         revalidate();
         repaint();
+    }
+        
+   // Added by Adam used same format as the others for the instructions view
+    public void addInstructions(InstructionsView i_view)
+    {
+        this.i_view = i_view;  //maintain handle to this view so we can remove it
+        add(i_view, BorderLayout.CENTER);
+        revalidate();
+        repaint();
     }    
     
     public void addSplash(NavView n_view)
@@ -63,9 +74,17 @@ public class NavViewPanel extends JPanel{
             remove(this.m_view);
     }    
     
+    // Added by Adam method to remove Intsructions
+    public void removeInstructions()
+    {
+        if (this.i_view != null)
+            remove(this.i_view);
+    } 
+    
+    
+    
     public void removeSplash()
     {
         remove(splash);
-    }
-            
+    }      
 }
