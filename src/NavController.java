@@ -27,6 +27,9 @@ public class NavController {
     // added by adam creates instuctions view
     InstructionsView i_view = new InstructionsView();
     
+    // added by adam
+    CreditsView c_view = new CreditsView();
+    
     
     public NavController(NavModel n_model, NavView n_view ) {
         this.n_model = n_model;
@@ -43,6 +46,9 @@ public class NavController {
         
        // added by adam listener for instructions button
         n_view.addInstructionsButtonListener(new InstructionsButtonListener());
+        
+        //added by adam
+        n_view.addCreditsButtonListener(new CreditsButtonListener());
        
         
     }
@@ -68,6 +74,14 @@ public class NavController {
         {            
             //Pass a  View object to our Navigation View
             n_view.switchToInstuctionsPanel(i_view);
+        }
+    }
+    //added by adam   
+    class CreditsButtonListener implements ActionListener {            
+        public void actionPerformed(ActionEvent e)
+        {            
+            //Pass a  View object to our Navigation View
+            n_view.switchToCreditsPanel(c_view);
         }
             
     }         

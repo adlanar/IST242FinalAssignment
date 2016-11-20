@@ -50,6 +50,15 @@ public class NavView extends JFrame{
         nVpanel.addInstructions(i_view);        
     }
     
+    // adam added
+    public void switchToCreditsPanel(CreditsView c_view)
+    {
+        nVpanel.removeSplash();
+        nVpanel.removeMain();
+        nVpanel.removeOptions();
+        nVpanel.addCredits(c_view);        
+    }
+    
     
     public void addOptionsButtonListener(ActionListener al) 
     {    
@@ -65,7 +74,13 @@ public class NavView extends JFrame{
     public void addInstructionsButtonListener(ActionListener al) 
     {    
         nVpanel.menu.instructionsButton.addActionListener(al);
-    }  
+    }
+    
+    //adam added
+    public void addCreditsButtonListener(ActionListener al) 
+    {    
+        nVpanel.menu.creditsButton.addActionListener(al);
+    } 
     
     
     //TODO: Add listeners to switch to other Panels

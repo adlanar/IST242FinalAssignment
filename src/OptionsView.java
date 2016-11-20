@@ -10,10 +10,16 @@ import javax.swing.JTextField;
  * @author jrimland-air
  */
 public class OptionsView extends JPanel{
+        //didnt add ret button cus idk wtf its supposed to be
         JButton retButton;
         JTextField playerName;
         JLabel EnterDiff;
         JSlider difficulty;
+        
+        //adam added
+        JButton nerdButton;
+        JButton avgPersonButton;
+        JButton fratGuyButton;
         
         OptionsModel o_model;
         
@@ -37,7 +43,21 @@ public class OptionsView extends JPanel{
             add(playerName);
             add(EnterDiff);
             add(difficulty);
-
+            
+            //adam added
+            JLabel buttonsLabel = new JLabel("Pick your character type: ");
+            add(buttonsLabel);
+            
+            nerdButton = new JButton("Nerd");
+            add(nerdButton);
+            
+            fratGuyButton = new JButton("Frat Guy");
+            add(fratGuyButton);
+            
+            avgPersonButton = new JButton("Average Person");
+            add(avgPersonButton);
+            
+            
             //add(retButton);               
         }
 }
