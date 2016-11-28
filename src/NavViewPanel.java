@@ -16,7 +16,7 @@ public class NavViewPanel extends JPanel{
     // Adam added
     InstructionsView i_view;
     
-    //Adam added
+
     CreditsView c_view;
     
     public NavViewPanel() {
