@@ -30,16 +30,22 @@ public class OptionsController {
                 if (clickSource == o_view.getNerdButton()) {
                     //o_model.setStudentType("Nerd");
                     o_view.setStudentLabel("Nerd");
+                    //aaron sets storyline to path 0.
+                    o_model.setPath(0);
                 }
                 
                 if (clickSource == o_view.getFratButton()) {
                     //o_model.setStudentType("Frat guy");
-                    o_view.setStudentLabel("Frat guy");
+                    o_view.setStudentLabel("Frat Guy");
+                    //Sets storyline to path 1.
+                    o_model.setPath(1);
                 }
                 
                 if (clickSource == o_view.getavgButton()) {
                     //o_model.setStudentType("Average person");
-                    o_view.setStudentLabel("Average person");
+                    o_view.setStudentLabel("Average Person");
+                    //Sets storyline to path 2.
+                    o_model.setPath(2);
                 }
                 
                 if (clickSource == o_view.getSaveButton())
