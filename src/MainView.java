@@ -61,6 +61,6 @@ public class MainView extends JPanel{
     
     public void setOptionsData(String name, int difficulty, String studentType) {
         
-        mainStatus.setText(name + " " + difficulty + " " + studentType);
+        mainStatus.setText("Name: " + name + " Difficulty: " + difficulty + " Type: " + studentType);
     }
 }

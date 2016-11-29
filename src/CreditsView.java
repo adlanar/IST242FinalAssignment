@@ -20,7 +20,7 @@ public class CreditsView extends JPanel {
     {
         JLabel creditsLabel = new JLabel("<html>CREDITS: <br><br><br>"
                 + "Adam 'what does the semicolon do' Clarkson<br>"
-                + "Aaron 'dude weed lmao' Yu<br>"
+                + "Aaron 'high and boring' Yu<br>"
                 + "Adlan 'you guys know nothing' Ramly<html>");
         add(creditsLabel);
     }

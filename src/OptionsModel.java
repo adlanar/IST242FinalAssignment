@@ -14,6 +14,7 @@ public class OptionsModel {
      private String name;
      private int diffLevel;
      private String studentType;
+     private int path;
      
      public String getName() {
         return name;
@@ -34,6 +35,12 @@ public class OptionsModel {
      public void setStudentType(String student) {
          studentType = student;
      }
+     
+    public void setPath(int playerPath)
+    {
+        path = playerPath;
+    }
+    
      
      
 }

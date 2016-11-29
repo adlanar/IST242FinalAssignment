@@ -21,10 +21,10 @@ public class InstructionsView extends JPanel {
     {
         JLabel intstrLabel = new JLabel("<html>Welcome to the Instructions!<br>"
                 + "<br>This is a text based game with the theme of college life."
-                + "<br> The option has of this game is rather simple: survive college!<br>"
+                + "<br> The option has of this game is rather simple: Survive College!<br>"
                 + "You get three different character types to start with: Nerd, Average, and Fratty<br>"
                 + "The game provies you with different situations depending on your choices, and the game can end in"
-                + "different ways.<br>"
+                + " different ways.<br>"
                 + "<br><br> GOOD LUCK AND TRY NOT TO DROP OUT!<html>");
         add(intstrLabel);
         
