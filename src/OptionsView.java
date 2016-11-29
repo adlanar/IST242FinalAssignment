@@ -1,4 +1,5 @@
 //ours
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -15,6 +16,7 @@ public class OptionsView extends JPanel{
         JTextField playerName;
         JLabel EnterDiff;
         JSlider difficulty;
+        
         
         //adam added
         JButton nerdButton;
@@ -56,8 +58,28 @@ public class OptionsView extends JPanel{
             
             avgPersonButton = new JButton("Average Person");
             add(avgPersonButton);
+        }
+            
+            // button listeners
+            public void nerdButtonListener(ActionListener al)
+            {    
+                nerdButton.addActionListener(al);
+            }
+            
+            public void fratGuyButtonListener(ActionListener al)
+            {    
+                fratGuyButton.addActionListener(al);
+            }
+            
+            public void avgPersonButtonListener(ActionListener al)
+            {    
+                avgPersonButton.addActionListener(al);
+            }
+            
+            
+            
             
             
             //add(retButton);               
-        }
+        
 }
