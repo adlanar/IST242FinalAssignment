@@ -1,4 +1,3 @@
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -15,31 +14,43 @@ import javax.swing.JButton;
  * @author jrimland-air
  */
 public class OptionsController {
-    OptionsModel o_model;
-    OptionsView o_view;
+    private OptionsModel o_model;
+    private OptionsView o_view;
     
-    OptionsController(OptionsModel o_model, OptionsView o_view)
-    {
-       this.o_model = o_model;
-       this.o_view = o_view;
-        
-       /* class ButtonListener implements ActionListener
-        {            
-            @Override
-            public void actionPerformed(ActionEvent e)
+    OptionsController(OptionsModel o_model, OptionsView o_view) {
+        this.o_model = o_model;
+        this.o_view = o_view;
+    
+    
+    class ButtonListener implements ActionListener {
+        public void actionPerformed(ActionEvent e)
             {
-                JButton eventSource = (JButton)e.getSource();
-                if(eventSource == o_view.saveButton)
+                JButton clickSource = (JButton) e.getSource();
+                
+                if (clickSource == o_view.getNerdButton()) {
+                    //o_model.setStudentType("Nerd");
+                    o_view.setStudentLabel("Nerd");
+                }
+                
+                if (clickSource == o_view.getFratButton()) {
+                    //o_model.setStudentType("Frat guy");
+                    o_view.setStudentLabel("Frat guy");
+                }
+                
+                if (clickSource == o_view.getavgButton()) {
+                    //o_model.setStudentType("Average person");
+                    o_view.setStudentLabel("Average person");
+                }
+                
+                if (clickSource == o_view.getSaveButton())
                 {
-                    o_view.savefName();
-                    o_view.savelName();
-                    o_view.saveAge();
-                } 
-            }
+                    o_model.setName(o_view.getName());
+                    o_model.setDiff(o_view.getDiff());
+                    o_model.setStudentType(o_view.getStudentType());
+                    //System.out.println(o_model.getName() + " " + o_view.getDiff() + " " + o_model.getStudentType());
+                }  
         }
-        view.saveButtonListener(new ButtonListener());
-        view.loadButtonListener(new ButtonListener());
-    } */
-    } 
-    
-} 
+    }
+        o_view.addButtonListener(new ButtonListener());
+    }
+}

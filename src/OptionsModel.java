@@ -1,10 +1,3 @@
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JSlider;
-import javax.swing.JTextField;
-
-
 //ours
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -16,33 +9,31 @@ import javax.swing.JTextField;
  *
  * @author jrimland-air
  */
+//adlan added
 public class OptionsModel {
-    
-    OptionsModel()
-    {}
-    
-    private int diffSetting;
-    private String playersName;
-    
-    public void setPlayersName(String name)
-    {
-        playersName = name;
-    }
-    
-    public void setDiffSetting(int setting)
-    {
-        diffSetting = setting;
-    }
-    
-    int getDiffSetting()
-    {
-        return diffSetting;
-    }
-    
-    String getPlayersName()
-    {
-        return playersName;
-    }
-    
-    
+     private String name;
+     private int diffLevel;
+     private String studentType;
+     
+     public String getName() {
+        return name;
+     }
+     
+     public String getStudentType() {
+         return studentType;
+     }
+     
+     public void setName(String playerName) {
+         name = playerName;
+     }
+     
+     public void setDiff(int difficulty) {
+         diffLevel = difficulty;
+     }
+     
+     public void setStudentType(String student) {
+         studentType = student;
+     }
+     
+     
 }

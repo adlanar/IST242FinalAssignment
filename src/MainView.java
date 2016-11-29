@@ -1,5 +1,6 @@
 //ours
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
@@ -48,9 +49,18 @@ import javax.swing.JPanel;
 //}
 
 public class MainView extends JPanel{
+    private JLabel mainStatus;
     MainView()
     {
         JButton welcomeButton = new JButton("Welcome to the Main View!");
         add(welcomeButton);
+        
+        mainStatus = new JLabel("Options have not been set");
+        add(mainStatus);
+    }
+    
+    public void setOptionsData(String name, int difficulty, String studentType) {
+        
+        mainStatus.setText(name + " " + difficulty + " " + studentType);
     }
 }

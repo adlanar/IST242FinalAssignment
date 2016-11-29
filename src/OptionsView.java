@@ -1,3 +1,4 @@
+
 //ours
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -11,17 +12,23 @@ import javax.swing.JTextField;
  * @author jrimland-air
  */
 public class OptionsView extends JPanel{
-        //didnt add ret button cus idk wtf its supposed to be
-        JButton retButton;
-        JTextField playerName;
-        JLabel EnterDiff;
-        JSlider difficulty;
+        //adlan added variables
+        private String name;
+        private int diffLevel;
+        private String studentType;
         
+        
+        JTextField nameText;
+        JLabel EnterDiff;
+        JLabel typeText;
+        JSlider difficulty;
         
         //adam added
         JButton nerdButton;
         JButton avgPersonButton;
         JButton fratGuyButton;
+        
+        JButton saveButton;
         
         OptionsModel o_model;
         
@@ -30,7 +37,7 @@ public class OptionsView extends JPanel{
             this.o_model = o_model;
                    
             
-            playerName = new JTextField("--Enter Player Name--");
+            nameText = new JTextField("--Enter Player Name--");
             difficulty = new JSlider(JSlider.HORIZONTAL, 1,10,5);
             difficulty.setMajorTickSpacing(1);
             difficulty.setPaintLabels(true);
@@ -42,7 +49,7 @@ public class OptionsView extends JPanel{
             
             //retButton = new JButton("Save and Return");
 
-            add(playerName);
+            add(nameText);
             add(EnterDiff);
             add(difficulty);
             
@@ -58,28 +65,57 @@ public class OptionsView extends JPanel{
             
             avgPersonButton = new JButton("Average Person");
             add(avgPersonButton);
+            
+            typeText = new JLabel("-Type not selected-");
+            add(typeText);
+            
+            saveButton = new JButton("Save");
+            add(saveButton);
+              
+            
         }
-            
-            // button listeners
-            public void nerdButtonListener(ActionListener al)
-            {    
-                nerdButton.addActionListener(al);
-            }
-            
-            public void fratGuyButtonListener(ActionListener al)
-            {    
-                fratGuyButton.addActionListener(al);
-            }
-            
-            public void avgPersonButtonListener(ActionListener al)
-            {    
-                avgPersonButton.addActionListener(al);
-            }
-            
-            
-            
-            
-            
-            //add(retButton);               
         
+         public void addButtonListener(ActionListener al) {   
+            nerdButton.addActionListener(al);
+            fratGuyButton.addActionListener(al);
+            avgPersonButton.addActionListener(al);
+            saveButton.addActionListener(al);
+         }
+         
+         public void SetCurrentWord(String newWord){
+             nameText.setText(newWord);
+             typeText.setText(newWord);
+         }
+         
+         public String getName(){
+             return nameText.getText();
+         }
+         
+         public int getDiff(){
+            return difficulty.getValue(); 
+         }
+         
+         public String getStudentType() {
+             return typeText.getText();
+         }
+         
+         public JButton getSaveButton() {
+            return this.saveButton;
+        }
+        
+        public JButton getNerdButton() {
+            return this.nerdButton;
+        }
+        
+        public JButton getFratButton() {
+            return this.fratGuyButton;
+        }
+        
+        public JButton getavgButton() {
+            return this.avgPersonButton;
+        }
+          
+        public void setStudentLabel(String newType) {
+            typeText.setText(newType);
+        }
 }
