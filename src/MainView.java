@@ -1,4 +1,5 @@
 //ours
+import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -50,17 +51,73 @@ import javax.swing.JPanel;
 
 public class MainView extends JPanel{
     private JLabel mainStatus;
+    
+    private JLabel promptText;
+    private JButton promptChoiceA;
+    private JButton promptChoiceB;
+    
+    private enum Scenes {
+    sc1,
+    sc2;
+    }
+    
+    private Scenes myScene;
+    
+    
+    
     MainView()
-    {
-        JButton welcomeButton = new JButton("Welcome to the Main View!");
-        add(welcomeButton);
-        
+    {   
         mainStatus = new JLabel("Options have not been set");
-        add(mainStatus);
+        //add(mainStatus);
+        
+        promptText = new JLabel("Story here");
+        //add(promptText);
+        
+        promptChoiceA = new JButton("Choice A");
+        //add(promptChoiceA);
+        
+        promptChoiceB = new JButton("Choice B");
+        //add(promptChoiceB);
+        
+        JPanel content = new JPanel();
+        
+        GridLayout grid = new GridLayout(0,1);
+        content.setLayout(grid);
+        
+        content.add(mainStatus);
+        content.add(promptText);
+        content.add(promptChoiceA);
+        content.add(promptChoiceB);
+        
+        add(content);
+        
     }
     
     public void setOptionsData(String name, int difficulty, String studentType) {
-        
+        if (name != null && studentType != "-Type not selected-"){
         mainStatus.setText("Name: " + name + " Difficulty: " + difficulty + " Type: " + studentType);
+        sc1();
+        }
     }
+    
+    public void setPrompt(String story){
+        promptText.setText(story);
+    }
+    
+    public void setChoiceA(String textA){
+        promptChoiceA.setText(textA);
+    }
+    
+    public void setChoiceB(String textB) {
+        promptChoiceB.setText(textB);
+    }
+    
+    //SCENES
+    public void sc1() {
+        setPrompt("asasasas");
+        setChoiceA("efweff");
+        setChoiceB("dfvbffdb");
+        
+    }
+    
 }

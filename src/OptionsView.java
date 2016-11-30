@@ -1,5 +1,6 @@
 
 //ours
+import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -55,24 +56,44 @@ public class OptionsView extends JPanel{
             
             //adam added
             JLabel buttonsLabel = new JLabel("Pick your character type: ");
-            add(buttonsLabel);
+            //add(buttonsLabel);
             
             nerdButton = new JButton("Nerd");
-            add(nerdButton);
+            //add(nerdButton);
             
             fratGuyButton = new JButton("Frat Guy");
-            add(fratGuyButton);
+            //add(fratGuyButton);
             
             avgPersonButton = new JButton("Average Person");
-            add(avgPersonButton);
+            //add(avgPersonButton);
             
             typeText = new JLabel("-Type not selected-");
-            add(typeText);
+            //add(typeText);
             
             saveButton = new JButton("Save");
-            add(saveButton);
-              
+            //add(saveButton);
             
+            JPanel content = new JPanel();
+        
+            GridLayout grid = new GridLayout(0,3);
+            content.setLayout(grid);
+            
+            content.add(nerdButton);
+            content.add(fratGuyButton);
+            content.add(avgPersonButton);
+            //content.add(typeText);
+            //content.add(saveButton);
+            add(content);
+            
+            JPanel content2 = new JPanel();
+            
+            GridLayout grid2 = new GridLayout(0,1);
+            content2.setLayout(grid2);
+        
+            content2.add(typeText);
+            content2.add(saveButton);
+            add(content2);
+             
         }
         
          public void addButtonListener(ActionListener al) {   
