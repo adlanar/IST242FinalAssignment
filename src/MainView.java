@@ -1,5 +1,7 @@
 //ours
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -49,21 +51,15 @@ import javax.swing.JPanel;
 //}
 //}
 
-public class MainView extends JPanel{
+public class MainView extends JPanel implements ActionListener{
+    
     private JLabel mainStatus;
     
     private JLabel promptText;
     private JButton promptChoiceA;
     private JButton promptChoiceB;
     
-    private enum Scenes {
-    sc1,
-    sc2;
-    }
-    
-    private Scenes myScene;
-    
-    
+    private String currentScene;
     
     MainView()
     {   
@@ -74,9 +70,11 @@ public class MainView extends JPanel{
         //add(promptText);
         
         promptChoiceA = new JButton("Choice A");
+        promptChoiceA.addActionListener(this);
         //add(promptChoiceA);
         
         promptChoiceB = new JButton("Choice B");
+        promptChoiceB.addActionListener(this);
         //add(promptChoiceB);
         
         JPanel content = new JPanel();
@@ -90,6 +88,19 @@ public class MainView extends JPanel{
         content.add(promptChoiceB);
         
         add(content);
+        
+    }
+    
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        JButton eventSource = (JButton)e.getSource();
+        if (eventSource == promptChoiceA) {
+            System.out.println("button a pressed!");
+            gameOverScreen();
+        }
+        if (eventSource == promptChoiceB) {
+            
+        }
         
     }
     
@@ -114,10 +125,27 @@ public class MainView extends JPanel{
     
     //SCENES
     public void sc1() {
+        currentScene = "sc1";
         setPrompt("asasasas");
-        setChoiceA("efweff");
-        setChoiceB("dfvbffdb");
-        
+        setChoiceA("efweff"); // go to sc2a
+        setChoiceB("dfvbffdb"); // go to sc2b
+    }
+    
+    //WHICH ONE?
+    //a. while sc1(), do        b.if(evSource == choice && button.getText() == "choice") do
+    
+    public void gameOverScreen() {
+//    jpanel.remove(component); //remove component from your jpanel in this case i used jpanel 
+//    jpanel.revalidate();
+//    jframe.repaint();//repaint a JFrame jframe in this case 
+//
+//    jpanel.add(component); //add component to jpanel in this case i used jpanel 
+//    jpanel.revalidate(); 
+//    jframe.repaint();//repaint a JFrame jframe in this case 
+    remove(promptText);
+    remove(promptChoiceA);
+    remove(promptChoiceB);
+    revalidate();
     }
     
 }
