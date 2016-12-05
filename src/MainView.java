@@ -58,24 +58,32 @@ public class MainView extends JPanel implements ActionListener{
     private JLabel promptText;
     private JButton promptChoiceA;
     private JButton promptChoiceB;
+    private JButton promptChoiceC;
     
     private String currentScene;
-    
+    private boolean pass;
+    private int choice;
+    StoryModel myStory = new StoryModel();
+      
     MainView()
     {   
         mainStatus = new JLabel("Options have not been set");
         //add(mainStatus);
         
-        promptText = new JLabel("Story here");
+        promptText = new JLabel("Click options to set your quest.");
         //add(promptText);
         
-        promptChoiceA = new JButton("Choice A");
+        promptChoiceA = new JButton("");
         promptChoiceA.addActionListener(this);
         //add(promptChoiceA);
         
-        promptChoiceB = new JButton("Choice B");
+        promptChoiceB = new JButton("");
         promptChoiceB.addActionListener(this);
         //add(promptChoiceB);
+        
+        promptChoiceC = new JButton("");
+        promptChoiceC.addActionListener(this);
+        
         
         JPanel content = new JPanel();
         
@@ -86,6 +94,7 @@ public class MainView extends JPanel implements ActionListener{
         content.add(promptText);
         content.add(promptChoiceA);
         content.add(promptChoiceB);
+        content.add(promptChoiceC);
         
         add(content);
         
@@ -95,19 +104,21 @@ public class MainView extends JPanel implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         JButton eventSource = (JButton)e.getSource();
         if (eventSource == promptChoiceA) {
-            System.out.println("button a pressed!");
-            gameOverScreen();
+            myStory.setChoice(1);
         }
-        if (eventSource == promptChoiceB) {
-            
+        else if (eventSource == promptChoiceB) {
+            myStory.setChoice(2);
+        }
+        else if (eventSource == promptChoiceB) {
+            myStory.setChoice(3);
         }
         
     }
     
-    public void setOptionsData(String name, int difficulty, String studentType) {
+    public void setOptionsData(String name, int difficulty, String studentType, int playerPath) {
         if (name != null && studentType != "-Type not selected-"){
         mainStatus.setText("Name: " + name + " Difficulty: " + difficulty + " Type: " + studentType);
-        sc1();
+        startGame(playerPath);
         }
     }
     
@@ -123,13 +134,38 @@ public class MainView extends JPanel implements ActionListener{
         promptChoiceB.setText(textB);
     }
     
-    //SCENES
-    public void sc1() {
-        currentScene = "sc1";
-        setPrompt("asasasas");
-        setChoiceA("efweff"); // go to sc2a
-        setChoiceB("dfvbffdb"); // go to sc2b
+    public void setChoiceC(String textC) {
+        promptChoiceC.setText(textC);
     }
+    
+    //SCENES
+    
+    
+    
+    public void startGame(int path) {
+     
+    if(path == 0){
+        setPrompt(myStory.setNerd1());
+        setChoiceA(myStory.setNerd1Option1());
+        setChoiceB(myStory.setNerd1Option2());
+        setChoiceC(myStory.setNerd1Option3());
+     
+    }
+      if(path == 1){
+        setPrompt(myStory.setFrat1());
+        setChoiceA(myStory.setFrat1Option1());
+        setChoiceB(myStory.setFrat1Option2());
+        setChoiceC(myStory.setFrat1Option3());
+    }
+    if(path == 2){
+        setPrompt(myStory.setAvg1());
+        setChoiceA(myStory.setAvg1Option1());
+        setChoiceB(myStory.setAvg1Option2());
+        setChoiceC(myStory.setAvg1Option3());
+    }
+    }
+    
+
     
     //WHICH ONE?
     //a. while sc1(), do        b.if(evSource == choice && button.getText() == "choice") do

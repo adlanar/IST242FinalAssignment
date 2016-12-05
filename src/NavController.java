@@ -65,7 +65,7 @@ public class NavController {
         {            
             //Pass a Main View object to our Navigation View
             n_view.switchToMainPanel(m_view);
-            m_view.setOptionsData(o_model.getName(), o_view.getDiff(), o_model.getStudentType());
+            m_view.setOptionsData(o_model.getName(), o_view.getDiff(), o_model.getStudentType(), o_model.getPath());
         }
     }
         

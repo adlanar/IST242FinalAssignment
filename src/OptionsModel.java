@@ -24,6 +24,10 @@ public class OptionsModel {
          return studentType;
      }
      
+     public int getPath() {
+         return path;
+     }
+     
      public void setName(String playerName) {
          name = playerName;
      }
@@ -40,6 +44,8 @@ public class OptionsModel {
     {
         path = playerPath;
     }
+    
+
     
      
      
