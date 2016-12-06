@@ -14,6 +14,9 @@ public class NavView extends JFrame{
     NavModel model;
     NavViewPanel nVpanel;
     
+    // adam added 12/6 
+    MainView m_view;
+    
     NavView(NavModel model)
     {
         super("The College Struggle");
@@ -86,7 +89,21 @@ public class NavView extends JFrame{
         nVpanel.menu.creditsButton.addActionListener(al);
     } 
     
+    // adam added 12/5
+    public void addPromptChoiceAButtonListener(ActionListener al) 
+    {    
+        nVpanel.m_view.promptChoiceA.addActionListener(al);
+    }
     
-    //TODO: Add listeners to switch to other Panels
+    public void addPromptChoiceBButtonListener(ActionListener al) 
+    {    
+        nVpanel.m_view.promptChoiceB.addActionListener(al);
+    } 
+    
+    public void addPromptChoiceCButtonListener(ActionListener al) 
+    {    
+        nVpanel.m_view.promptChoiceC.addActionListener(al);
+    } 
+    
     
 }

@@ -10,7 +10,7 @@ public class NavViewPanel extends JPanel{
 
     NavViewBottomMenuPanel menu;
     NavViewSplashPanel splash;
-    
+       
     OptionsView o_view;
     MainView m_view;
     // Adam added
@@ -71,7 +71,7 @@ public class NavViewPanel extends JPanel{
         repaint();
     }
     
-    
+      
     public void removeOptions()
     {
         if (this.o_view != null)

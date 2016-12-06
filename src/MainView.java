@@ -56,9 +56,9 @@ public class MainView extends JPanel implements ActionListener{
     private JLabel mainStatus;
     
     private JLabel promptText;
-    private JButton promptChoiceA;
-    private JButton promptChoiceB;
-    private JButton promptChoiceC;
+    public JButton promptChoiceA;
+    public JButton promptChoiceB;
+    public JButton promptChoiceC;
     
     private String currentScene;
     private boolean pass;
@@ -138,6 +138,7 @@ public class MainView extends JPanel implements ActionListener{
         promptChoiceC.setText(textC);
     }
     
+    
     //SCENES
     
     
@@ -165,7 +166,19 @@ public class MainView extends JPanel implements ActionListener{
     }
     }
     
-
+    //adam added 12/6
+    public JButton getChoiceA(){
+        return this.promptChoiceA;
+    }
+    
+    public JButton getChoiceB(){
+        return this.promptChoiceB;
+    }
+    
+    public JButton getChoiceC(){
+        return this.promptChoiceC;
+    }
+           
     
     //WHICH ONE?
     //a. while sc1(), do        b.if(evSource == choice && button.getText() == "choice") do

@@ -19,7 +19,13 @@ public class NavController {
     //Instance Variables for Options Model, View, and Controller
     OptionsModel o_model;
     OptionsView o_view;
-    OptionsController o_Controller;  
+    OptionsController o_Controller;
+    
+
+    // added by adam on 12/5
+    StoryModel s_model;
+    StoryController s_controller;
+    
            
     // TODO: Create instances of your MainModel and MainController once you implement them
     MainView m_view;
@@ -49,8 +55,8 @@ public class NavController {
         
         //added by adam
         n_view.addCreditsButtonListener(new CreditsButtonListener());
-       
         
+              
     }
     class OptionsButtonListener implements ActionListener {            
         public void actionPerformed(ActionEvent e)
