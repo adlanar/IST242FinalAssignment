@@ -146,23 +146,23 @@ public class MainView extends JPanel implements ActionListener{
     public void startGame(int path) {
      
     if(path == 0){
-        setPrompt(myStory.setNerd1());
-        setChoiceA(myStory.setNerd1Option1());
-        setChoiceB(myStory.setNerd1Option2());
-        setChoiceC(myStory.setNerd1Option3());
+        setPrompt(myStory.getNerd1());
+        setChoiceA(myStory.getNerd1Option1());
+        setChoiceB(myStory.getNerd1Option2());
+        setChoiceC(myStory.getNerd1Option3());
      
     }
       if(path == 1){
-        setPrompt(myStory.setFrat1());
-        setChoiceA(myStory.setFrat1Option1());
-        setChoiceB(myStory.setFrat1Option2());
-        setChoiceC(myStory.setFrat1Option3());
+        setPrompt(myStory.getFrat1());
+        setChoiceA(myStory.getFrat1Option1());
+        setChoiceB(myStory.getFrat1Option2());
+        setChoiceC(myStory.getFrat1Option3());
     }
     if(path == 2){
-        setPrompt(myStory.setAvg1());
-        setChoiceA(myStory.setAvg1Option1());
-        setChoiceB(myStory.setAvg1Option2());
-        setChoiceC(myStory.setAvg1Option3());
+        setPrompt(myStory.getAvg1());
+        setChoiceA(myStory.getAvg1Option1());
+        setChoiceB(myStory.getAvg1Option2());
+        setChoiceC(myStory.getAvg1Option3());
     }
     }
     
