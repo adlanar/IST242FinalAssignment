@@ -271,7 +271,7 @@ public String getFrat5Option2(){
     return "Say please.";
 }
 
-public String fratWin(){
+public String getFratWin(){
     return "The spaceship roars to life and safely takes you back home, where you are hailed as a hero by the frat.";
 }
 
@@ -396,7 +396,7 @@ public String getAvg5Fail2(){
     return "She starts to cry, and everyone thinks you did it. They all beat you up.";
 }
 
-public String avgWin(){
+public String getAvgWin(){
     return "You two finish the project, get an A, and get married. You live happily ever after!";
 } 
         

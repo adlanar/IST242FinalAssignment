@@ -222,9 +222,290 @@ public class MainView extends JPanel implements ActionListener{
         }
         
         //FRAT PATH
+        //STAGE 1
+        else if (eventSource == promptChoiceA && path == 1 && stage == 1) {
+            String result = myStory.getFrat2();
+            System.out.println(result);
+            promptText.setText(result);
+            promptChoiceA.setText(myStory.getFrat2Option1());
+            promptChoiceB.setText(myStory.getFrat2Option2());
+            promptChoiceC.setText(myStory.getFrat2Option3());
+            
+            stage = 2;
+            System.out.println("Stage " + stage);
+        }
+        
+        else if (eventSource == promptChoiceB && path == 1 && stage == 1) {
+            String result = myStory.getFrat1Fail2();
+            System.out.println(result);
+            
+            promptText.setText(result);
+            removeButtons();
+        }
+        
+        else if (eventSource == promptChoiceC && path == 1 && stage == 1) {
+            String result = myStory.getFrat1Fail3();
+            System.out.println(result);
+            
+            promptText.setText(result);
+            removeButtons();
+        }
+        
+        //STAGE 2
+        else if (eventSource == promptChoiceA && path == 1 && stage == 2) {
+            String result = myStory.getFrat3();
+            System.out.println(result);
+            promptText.setText(result);
+            promptChoiceA.setText(myStory.getFrat3Option1());
+            promptChoiceB.setText(myStory.getFrat3Option2());
+            promptChoiceC.setText(myStory.getFrat3Option3());
+            
+            stage = 3;
+            System.out.println("Stage " + stage);
+        }
+        
+        else if (eventSource == promptChoiceB && path == 1 && stage == 2) {
+            String result = myStory.getFrat2Fail2();
+            System.out.println(result);
+            
+            promptText.setText(result);
+            removeButtons();
+        }
+        
+        else if (eventSource == promptChoiceC && path == 1 && stage == 2) {
+            String result = myStory.getFrat2Fail3();
+            System.out.println(result);
+            
+            promptText.setText(result);
+            removeButtons();
+        }
+        
+       //STAGE 3
+        else if (eventSource == promptChoiceA && path == 1 && stage == 3) {
+            String result = myStory.getFrat3Fail1();
+            System.out.println(result);
+            
+            promptText.setText(result);
+            removeButtons();
+        }
+        
+        else if (eventSource == promptChoiceB && path == 1 && stage == 3) {
+            String result = myStory.getFrat3Fail2();
+            System.out.println(result);
+            
+            promptText.setText(result);
+            removeButtons();
+        }
+        
+        else if (eventSource == promptChoiceC && path == 1 && stage == 3) {
+            String result = myStory.getFrat4();
+            System.out.println(result);
+            promptText.setText(result);
+            promptChoiceA.setText(myStory.getFrat4Option1());
+            promptChoiceB.setText(myStory.getFrat4Option2());
+            promptChoiceC.setText(myStory.getFrat4Option3());
+            
+            stage = 4;
+            System.out.println("Stage " + stage);
+        }
+       
+       //STAGE 4
+       else if (eventSource == promptChoiceA && path == 1 && stage == 4) {
+            String result = myStory.getFrat4Fail1();
+            System.out.println(result);
+            
+            promptText.setText(result);
+            removeButtons();
+        }
+        
+        else if (eventSource == promptChoiceB && path == 1 && stage == 4) {
+            String result = myStory.getFrat5();
+            System.out.println(result);
+            promptText.setText(result);
+            promptChoiceA.setText(myStory.getFrat5Option1());
+            promptChoiceB.setText(myStory.getFrat5Option2());
+            promptChoiceC.setText(myStory.getFrat5Option3());
+            
+            stage = 5;
+            System.out.println("Stage " + stage);
+        }
+        
+        else if (eventSource == promptChoiceC && path == 1 && stage == 4) {
+            String result = myStory.getFrat4Fail3();
+            System.out.println(result);
+            
+            promptText.setText(result);
+            removeButtons();
+        }
+       
+       //STAGE 5
+       else if (eventSource == promptChoiceA && path == 1 && stage == 5) {
+            String result = myStory.getFrat5Fail1();
+            System.out.println(result);
+            
+            promptText.setText(result);
+            removeButtons();
+        }
+        
+        else if (eventSource == promptChoiceB && path == 1 && stage == 5) {
+            String result = myStory.getFratWin();
+            System.out.println(result);
+            promptText.setText(result);
+            removeButtons();
+            
+            stage = 6;
+            System.out.println("Stage " + stage);
+        }
+        
+        else if (eventSource == promptChoiceC && path == 1 && stage == 5) {
+            String result = myStory.getFrat5Fail3();
+            System.out.println(result);
+            
+            promptText.setText(result);
+            removeButtons();
+        }
         
         //AVG PATH
+        //STAGE 1
+        else if (eventSource == promptChoiceA && path == 2 && stage == 1) {
+            String result = myStory.getAvg1Fail1();
+            System.out.println(result);
+            
+            promptText.setText(result);
+            removeButtons();
+        }
         
+        else if (eventSource == promptChoiceB && path == 2 && stage == 1) {
+            String result = myStory.getAvg1Fail2();
+            System.out.println(result);
+            
+            promptText.setText(result);
+            removeButtons();
+        }
+        
+        else if (eventSource == promptChoiceC && path == 2 && stage == 1) {
+            String result = myStory.getAvg2();
+            System.out.println(result);
+            promptText.setText(result);
+            promptChoiceA.setText(myStory.getAvg2Option1());
+            promptChoiceB.setText(myStory.getAvg2Option2());
+            promptChoiceC.setText(myStory.getAvg2Option3());
+            
+            stage = 2;
+            System.out.println("Stage " + stage);
+        }
+        
+        //STAGE 2
+        else if (eventSource == promptChoiceA && path == 2 && stage == 2) {
+            String result = myStory.getAvg3();
+            System.out.println(result);
+            promptText.setText(result);
+            promptChoiceA.setText(myStory.getAvg3Option1());
+            promptChoiceB.setText(myStory.getAvg3Option2());
+            promptChoiceC.setText(myStory.getAvg3Option3());
+            
+            stage = 3;
+            System.out.println("Stage " + stage);
+        }
+        else if (eventSource == promptChoiceB && path == 2 && stage == 2) {
+            String result = myStory.getAvg2Fail2();
+            System.out.println(result);
+            
+            promptText.setText(result);
+            removeButtons();
+        }
+        
+        else if (eventSource == promptChoiceC && path == 2 && stage == 1) {
+            String result = myStory.getAvg2Fail3();
+            System.out.println(result);
+            
+            promptText.setText(result);
+            removeButtons();
+        }
+        
+        //STAGE 3
+        else if (eventSource == promptChoiceA && path == 2 && stage == 3) {
+            String result = myStory.getAvg4();
+            System.out.println(result);
+            promptText.setText(result);
+            promptChoiceA.setText(myStory.getAvg4Option1());
+            promptChoiceB.setText(myStory.getAvg4Option2());
+            promptChoiceC.setText(myStory.getAvg4Option3());
+            
+            stage = 4;
+            System.out.println("Stage " + stage);
+        }
+        else if (eventSource == promptChoiceB && path == 2 && stage == 3) {
+            String result = myStory.getAvg3Fail2();
+            System.out.println(result);
+            
+            promptText.setText(result);
+            removeButtons();
+        }
+        
+        else if (eventSource == promptChoiceC && path == 2 && stage == 3) {
+            String result = myStory.getAvg3Fail3();
+            System.out.println(result);
+            
+            promptText.setText(result);
+            removeButtons();
+        }
+        
+        //STAGE 4
+        else if (eventSource == promptChoiceA && path == 2 && stage == 4) {
+            String result = myStory.getAvg4Fail1();
+            System.out.println(result);
+            
+            promptText.setText(result);
+            removeButtons();
+        }
+        else if (eventSource == promptChoiceB && path == 2 && stage == 4) {
+            String result = myStory.getAvg5();
+            System.out.println(result);
+            promptText.setText(result);
+            promptChoiceA.setText(myStory.getAvg5Option1());
+            promptChoiceB.setText(myStory.getAvg5Option2());
+            promptChoiceC.setText(myStory.getAvg5Option3());
+            
+            stage = 5;
+            System.out.println("Stage " + stage);
+        }
+        
+        else if (eventSource == promptChoiceC && path == 2 && stage == 4) {
+            String result = myStory.getAvg4Fail3();
+            System.out.println(result);
+            
+            promptText.setText(result);
+            removeButtons();
+        }
+        
+        //STAGE 5
+        else if (eventSource == promptChoiceA && path == 2 && stage == 5) {
+            String result = myStory.getAvgWin();
+            System.out.println(result);
+            
+            promptText.setText(result);
+            removeButtons();
+            
+            stage = 6;
+            System.out.println("Stage " + stage);
+        }
+        else if (eventSource == promptChoiceB && path == 2 && stage == 5) {
+            String result = myStory.getAvg5Fail2();
+            System.out.println(result);
+            promptText.setText(result);
+            
+            promptText.setText(result);
+            removeButtons();
+        }
+        
+        else if (eventSource == promptChoiceC && path == 2 && stage == 5) {
+            String result = myStory.getAvg5Fail3();
+            System.out.println(result);
+            
+            promptText.setText(result);
+            removeButtons();
+        }
     }
     
     public void setOptionsData(String name, int difficulty, String studentType, int playerPath) {
