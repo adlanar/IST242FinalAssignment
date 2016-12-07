@@ -24,7 +24,6 @@ public class NavController {
 
     // added by adam on 12/5
     StoryModel s_model;
-    StoryController s_controller;
     
            
     // TODO: Create instances of your MainModel and MainController once you implement them

@@ -14,6 +14,8 @@ import javax.swing.JPanel;
  */
 
 
+//GAME MECHANISM by Adlan
+//Adlan added restart button
 
 public class MainView extends JPanel implements ActionListener{
     
@@ -23,38 +25,31 @@ public class MainView extends JPanel implements ActionListener{
     public JButton promptChoiceA;
     public JButton promptChoiceB;
     public JButton promptChoiceC;
-    
-    private String currentScene;
-    private boolean pass;
-    private int choice;
+    public JButton restartButton;
     
     StoryModel myStory = new StoryModel();
     OptionsModel o_model = new OptionsModel();
     
     int path;
     int stage;
-    int stageFinished;
       
     MainView()
     {   
         mainStatus = new JLabel("Options have not been set");
-        //add(mainStatus);
-        
+
         promptText = new JLabel("Click options to set your quest.");
-        //add(promptText);
         
         promptChoiceA = new JButton("");
         promptChoiceA.addActionListener(this);
-        //add(promptChoiceA);
         
         promptChoiceB = new JButton("");
         promptChoiceB.addActionListener(this);
-        //add(promptChoiceB);
-        
         
         promptChoiceC = new JButton("");
         promptChoiceC.addActionListener(this);
         
+        restartButton = new JButton("");
+        restartButton.addActionListener(this);
         
         JPanel content = new JPanel();
         
@@ -66,6 +61,7 @@ public class MainView extends JPanel implements ActionListener{
         content.add(promptChoiceA);
         content.add(promptChoiceB);
         content.add(promptChoiceC);
+        content.add(restartButton);
         
         add(content);
         
@@ -215,17 +211,16 @@ public class MainView extends JPanel implements ActionListener{
             promptText.setText(result);
             removeButtons();
             
+            restartButton.setText("You Won! Restart?");
             stage = 6;
          
         }
         
         //FRAT PATH
-                //STAGE 1
+        //STAGE 1
         if(eventSource == promptChoiceA && path == 1 && stage == 1) {
           
             String result = myStory.getFrat2();
-
-            
             promptText.setText(result);
             promptChoiceA.setText(myStory.getFrat2Option1());
             promptChoiceB.setText(myStory.getFrat2Option2());
@@ -346,6 +341,7 @@ public class MainView extends JPanel implements ActionListener{
        
             promptText.setText(result);
             removeButtons();
+            restartButton.setText("You Won! Restart?");
             
             stage = 6;
        }
@@ -356,17 +352,9 @@ public class MainView extends JPanel implements ActionListener{
             promptText.setText(result);
             removeButtons();
         }
-        
-        
-        
-
-
-
-
-
 
         //AVG PATH
-                //STAGE 1
+        //STAGE 1
         if (eventSource == promptChoiceA && path == 2 && stage == 1) {
             myStory.setChoice(1);
    
@@ -397,13 +385,9 @@ public class MainView extends JPanel implements ActionListener{
             promptChoiceC.setText(myStory.getAvg2Option3());
             
             stage = 2;
- 
-
         }
         
         //STAGE 2
-        
-        
         else if (eventSource == promptChoiceA && path == 2 && stage == 2) {
             String result = myStory.getAvg2Fail1();
 
@@ -427,13 +411,10 @@ public class MainView extends JPanel implements ActionListener{
             promptChoiceB.setText(myStory.getAvg3Option2());
             promptChoiceC.setText(myStory.getAvg3Option3());
             
-            stage = 3;
-            
+            stage = 3;    
         }
-        //STAGE 3
         
-       
-        
+        //STAGE 3 
         else if (eventSource == promptChoiceA && path == 2 && stage == 3) {
             String result = myStory.getAvg3Fail1();
             promptText.setText(result);
@@ -456,8 +437,6 @@ public class MainView extends JPanel implements ActionListener{
             promptText.setText(result);
             removeButtons();
         }
-        
-      
         
         //STAGE 4
         else if (eventSource == promptChoiceA && path == 2 && stage == 4) {
@@ -483,13 +462,12 @@ public class MainView extends JPanel implements ActionListener{
             removeButtons();
         }
         
-      
-        
         //STAGE 5
           else if (eventSource == promptChoiceA && path == 2 && stage == 5) {
             String result = myStory.getAvgWin();
             promptText.setText(result);
             removeButtons();
+            restartButton.setText("You Won! Restart?");
             
             stage = 6;
         }
@@ -506,14 +484,10 @@ public class MainView extends JPanel implements ActionListener{
             removeButtons();
         }
         
-      
-        
-
-
-
-
-
-
+        //RESTART BUTTON
+        else if (eventSource == restartButton) {
+            startGame(path);
+        }
     }
     
     public void setOptionsData(String name, int difficulty, String studentType, int playerPath) {
@@ -543,11 +517,20 @@ public class MainView extends JPanel implements ActionListener{
         promptChoiceA.setVisible(false);
         promptChoiceB.setVisible(false);
         promptChoiceC.setVisible(false);
+        
+        restartButton.setVisible(true);
+        restartButton.setText("You Lost! Restart?");
     }
     
     
     //SCENES
     public void startGame(int path) {
+        
+    promptChoiceA.setVisible(true);
+    promptChoiceB.setVisible(true);
+    promptChoiceC.setVisible(true);
+   
+    restartButton.setVisible(false);
      
     if(path == 0){
         setPrompt(myStory.getNerd1());
@@ -556,8 +539,6 @@ public class MainView extends JPanel implements ActionListener{
         setChoiceC(myStory.getNerd1Option3());
         this.path = 0;
         stage = 1;
-    
-     
     }
       if(path == 1){
         setPrompt(myStory.getFrat1());
@@ -566,7 +547,6 @@ public class MainView extends JPanel implements ActionListener{
         setChoiceC(myStory.getFrat1Option3());
         this.path = 1;
         stage = 1;
-       
     }
     if(path == 2){
         setPrompt(myStory.getAvg1());
@@ -575,25 +555,6 @@ public class MainView extends JPanel implements ActionListener{
         setChoiceC(myStory.getAvg1Option3());
         this.path = 2;
         stage = 1;
-     
     }
     }
-    
-    //WHICH ONE?
-    //a. while sc1(), do        b.if(evSource == choice && button.getText() == "choice") do
-    
-    public void gameOverScreen() {
-//    jpanel.remove(component); //remove component from your jpanel in this case i used jpanel
-//    jpanel.revalidate();
-//    jframe.repaint();//repaint a JFrame jframe in this case
-//
-//    jpanel.add(component); //add component to jpanel in this case i used jpanel
-//    jpanel.revalidate();
-//    jframe.repaint();//repaint a JFrame jframe in this case
-    remove(promptText);
-    remove(promptChoiceA);
-    remove(promptChoiceB);
-    revalidate();
-    }
-    
 }

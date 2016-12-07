@@ -13,18 +13,13 @@ import javax.swing.JTextField;
  * @author jrimland-air
  */
 public class OptionsView extends JPanel{
-        //adlan added variables
-        private String name;
-        private int diffLevel;
-        private String studentType;
-        
-        
         JTextField nameText;
         JLabel EnterDiff;
         JLabel typeText;
         JSlider difficulty;
         
         //adam added
+        //adlan fixed buttons
         JButton nerdButton;
         JButton avgPersonButton;
         JButton fratGuyButton;
@@ -45,54 +40,35 @@ public class OptionsView extends JPanel{
             difficulty.setPaintTicks(true);
 
             EnterDiff = new JLabel("  Enter Difficulty:");
-
-            // It may be useful to have a Save & Return button
-            
-            //retButton = new JButton("Save and Return");
-
-            add(nameText);
-            add(EnterDiff);
-            add(difficulty);
             
             //adam added
             JLabel buttonsLabel = new JLabel("Pick your character type: ");
-            //add(buttonsLabel);
             
             nerdButton = new JButton("Nerd");
-            //add(nerdButton);
-            
             fratGuyButton = new JButton("Frat Guy");
-            //add(fratGuyButton);
-            
             avgPersonButton = new JButton("Average Person");
-            //add(avgPersonButton);
-            
+
             typeText = new JLabel("-Type not selected-");
-            //add(typeText);
-            
+
             saveButton = new JButton("Save");
-            //add(saveButton);
             
             JPanel content = new JPanel();
-        
-            GridLayout grid = new GridLayout(0,3);
-            content.setLayout(grid);
             
+            //adlan organized layouts
+            GridLayout grid = new GridLayout(0,1);
+            content.setLayout(grid);
+            content.add(nameText);
+            content.add(EnterDiff);
+            content.add(difficulty);
+            
+            content.add(buttonsLabel);
             content.add(nerdButton);
             content.add(fratGuyButton);
             content.add(avgPersonButton);
-            //content.add(typeText);
-            //content.add(saveButton);
+            content.add(typeText);
+            content.add(saveButton);
+            
             add(content);
-            
-            JPanel content2 = new JPanel();
-            
-            GridLayout grid2 = new GridLayout(0,1);
-            content2.setLayout(grid2);
-        
-            content2.add(typeText);
-            content2.add(saveButton);
-            add(content2);
              
         }
         
