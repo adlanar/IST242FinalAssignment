@@ -35,7 +35,7 @@ public class OptionsController {
                     //aaron sets storyline to path 0.
                     o_model.setPath(0);
                     myStory.setPath(0);
-                    System.out.println(o_model.getPath());
+            
                 }
                 
                 if (clickSource == o_view.getFratButton()) {
@@ -44,7 +44,7 @@ public class OptionsController {
                     //Sets storyline to path 1.
                     o_model.setPath(1);
                     myStory.setPath(1);
-                    System.out.println(o_model.getPath());
+              
                 }
                 
                 if (clickSource == o_view.getavgButton()) {
@@ -53,7 +53,7 @@ public class OptionsController {
                     //Sets storyline to path 2.
                     o_model.setPath(2);
                     myStory.setPath(2);
-                    System.out.println(o_model.getPath());
+                   
                 }
                 
                 if (clickSource == o_view.getSaveButton())
@@ -61,8 +61,7 @@ public class OptionsController {
                     o_model.setName(o_view.getName());
                     o_model.setDiff(o_view.getDiff());
                     o_model.setStudentType(o_view.getStudentType());
-                    //o_model.setPath(o_model.getPath())
-                    //System.out.println(o_model.getName() + " " + o_view.getDiff() + " " + o_model.getStudentType());
+
                 }  
         }
     }

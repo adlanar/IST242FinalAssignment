@@ -74,33 +74,32 @@ public class MainView extends JPanel implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         JButton eventSource = (JButton)e.getSource();
-        System.out.println("Print " + path);
         
         //NERD PATH
         //STAGE 1
         if (eventSource == promptChoiceA && path == 0 && stage == 1) {
             myStory.setChoice(1);
-            System.out.println("nerdFail1");
+
             String result = myStory.getNerd1Fail1();
-            System.out.println(result);
+         
             
             promptText.setText(result);
             removeButtons();
         }
         
         else if (eventSource == promptChoiceB && path == 0 && stage == 1) {
-            System.out.println("nerdFail2");
+ 
             String result = myStory.getNerd1Fail2();
-            System.out.println(result);
+   
             
             promptText.setText(result);
             removeButtons();
         }
         
         else if (eventSource == promptChoiceC && path == 0 && stage == 1) {
-            System.out.println("getNerd2");
+       
             String result = myStory.getNerd2();
-            System.out.println(result);
+
             
             promptText.setText(result);
             promptChoiceA.setText(myStory.getNerd2Option1());
@@ -108,21 +107,21 @@ public class MainView extends JPanel implements ActionListener{
             promptChoiceC.setText(myStory.getNerd2Option3());
             
             stage = 2;
-            System.out.println("Stage " + stage);
-            //System.out.println(o_model.getPath());
+ 
+        
         }
         
         //STAGE 2
         else if (eventSource == promptChoiceA && path == 0 && stage == 2) {
             String result = myStory.getNerd2Fail1();
-            System.out.println(result);
+           
             promptText.setText(result);
             removeButtons();
         }
         
         else if (eventSource == promptChoiceB && path == 0 && stage == 2) {
             String result = myStory.getNerd3();
-            System.out.println(result);
+            
             
             promptText.setText(result);
             promptChoiceA.setText(myStory.getNerd3Option1());
@@ -130,12 +129,12 @@ public class MainView extends JPanel implements ActionListener{
             promptChoiceC.setText(myStory.getNerd3Option3());
             
             stage = 3;
-            System.out.println("Stage " + stage);
+            
         }
         
         else if (eventSource == promptChoiceC && path == 0 && stage == 2) {
             String result = myStory.getNerd2Fail3();
-            System.out.println(result);
+          
             promptText.setText(result);
             removeButtons();
         }
@@ -143,21 +142,21 @@ public class MainView extends JPanel implements ActionListener{
         //STAGE 3
         else if (eventSource == promptChoiceA && path == 0 && stage == 3) {
             String result = myStory.getNerd3Fail1();
-            System.out.println(result);
+          
             promptText.setText(result);
             removeButtons();
         }
         
         else if (eventSource == promptChoiceB && path == 0 && stage == 3) {
             String result = myStory.getNerd3Fail2();
-            System.out.println(result);
+          
             promptText.setText(result);
             removeButtons();
         }
         
         else if (eventSource == promptChoiceC && path == 0 && stage == 3) {
             String result = myStory.getNerd4();
-            System.out.println(result);
+         
             
             promptText.setText(result);
             promptChoiceA.setText(myStory.getNerd4Option1());
@@ -165,68 +164,67 @@ public class MainView extends JPanel implements ActionListener{
             promptChoiceC.setText(myStory.getNerd4Option3());
             
             stage = 4;
-            System.out.println("Stage " + stage);
+
         }
         
         //STAGE 4
         else if (eventSource == promptChoiceA && path == 0 && stage == 4) {
             String result = myStory.getNerd4Fail1();
-            System.out.println(result);
+      
             promptText.setText(result);
             removeButtons();
         }
         
         else if (eventSource == promptChoiceB && path == 0 && stage == 4) {
             String result = myStory.getNerd4Fail2();
-            System.out.println(result);
+       
             promptText.setText(result);
             removeButtons();
         }
         
         else if (eventSource == promptChoiceC && path == 0 && stage == 4) {
             String result = myStory.getNerd5();
-            System.out.println(result);
-            
+  
             promptText.setText(result);
             promptChoiceA.setText(myStory.getNerd5Option1());
             promptChoiceB.setText(myStory.getNerd5Option2());
             promptChoiceC.setText(myStory.getNerd5Option3());
             
             stage = 5;
-            System.out.println("Stage " + stage);
+           
         }
         
         //STAGE 5
         else if (eventSource == promptChoiceA && path == 0 && stage == 5) {
             String result = myStory.getNerd5Fail1();
-            System.out.println(result);
+        
             promptText.setText(result);
             removeButtons();
         }
         
         else if (eventSource == promptChoiceB && path == 0 && stage == 5) {
             String result = myStory.getNerd5Fail2();
-            System.out.println(result);
+      
             promptText.setText(result);
             removeButtons();
         }
         
         else if (eventSource == promptChoiceC && path == 0 && stage == 5) {
             String result = myStory.getWinNerd();
-            System.out.println(result);
+        
             promptText.setText(result);
             removeButtons();
             
             stage = 6;
-            System.out.println("Stage " + stage);
+         
         }
         
         //FRAT PATH
                 //STAGE 1
         if(eventSource == promptChoiceA && path == 1 && stage == 1) {
-            System.out.println("getFrat2");
+          
             String result = myStory.getFrat2();
-            System.out.println(result);
+
             
             promptText.setText(result);
             promptChoiceA.setText(myStory.getFrat2Option1());
@@ -234,24 +232,23 @@ public class MainView extends JPanel implements ActionListener{
             promptChoiceC.setText(myStory.getFrat2Option3());
             
             stage = 2;
-            System.out.println("Stage " + stage);
-            //System.out.println(o_model.getPath());
+
         }        
                 
         else if (eventSource == promptChoiceB && path == 1 && stage == 1) {
             myStory.setChoice(1);
-            System.out.println("FratFail1");
+          
             String result = myStory.getFrat1Fail2();
-            System.out.println(result);
+           
             
             promptText.setText(result);
             removeButtons();
         }
         
         else if (eventSource == promptChoiceC && path == 1 && stage == 1) {
-            System.out.println("FratFail2");
+          
             String result = myStory.getFrat1Fail3();
-            System.out.println(result);
+        
             
             promptText.setText(result);
             removeButtons();
@@ -262,27 +259,22 @@ public class MainView extends JPanel implements ActionListener{
         //STAGE 2
         else if (eventSource == promptChoiceA && path == 1 && stage == 2) {
             String result = myStory.getFrat2Fail1();
-            System.out.println(result);
             promptText.setText(result);
             removeButtons();
         }
         
         else if (eventSource == promptChoiceB && path == 1 && stage == 2) {
             String result = myStory.getFrat3();
-            System.out.println(result);
-            
             promptText.setText(result);
             promptChoiceA.setText(myStory.getFrat3Option1());
             promptChoiceB.setText(myStory.getFrat3Option2());
             promptChoiceC.setText(myStory.getFrat3Option3());
             
             stage = 3;
-            System.out.println("Stage " + stage);
         }
         
         else if (eventSource == promptChoiceC && path == 1 && stage == 2) {
             String result = myStory.getFrat2Fail3();
-            System.out.println(result);
             promptText.setText(result);
             removeButtons();
         }
@@ -290,21 +282,18 @@ public class MainView extends JPanel implements ActionListener{
         //STAGE 3
         else if (eventSource == promptChoiceA && path == 1 && stage == 3) {
             String result = myStory.getFrat3Fail1();
-            System.out.println(result);
             promptText.setText(result);
             removeButtons();
         }
         
         else if (eventSource == promptChoiceB && path == 1 && stage == 3) {
             String result = myStory.getFrat3Fail2();
-            System.out.println(result);
             promptText.setText(result);
             removeButtons();
         }
         
         else if (eventSource == promptChoiceC && path == 1 && stage == 3) {
             String result = myStory.getFrat4();
-            System.out.println(result);
             
             promptText.setText(result);
             promptChoiceA.setText(myStory.getFrat4Option1());
@@ -312,20 +301,20 @@ public class MainView extends JPanel implements ActionListener{
             promptChoiceC.setText(myStory.getFrat4Option3());
             
             stage = 4;
-            System.out.println("Stage " + stage);
+   
         }
         
         //STAGE 4
         else if (eventSource == promptChoiceA && path == 1 && stage == 4) {
             String result = myStory.getFrat4Fail1();
-            System.out.println(result);
+  
             promptText.setText(result);
             removeButtons();
         }
         
            else if (eventSource == promptChoiceB && path == 1 && stage == 4) {
             String result = myStory.getFrat5();
-            System.out.println(result);
+  
             
             promptText.setText(result);
             promptChoiceA.setText(myStory.getFrat5Option1());
@@ -333,12 +322,11 @@ public class MainView extends JPanel implements ActionListener{
             promptChoiceC.setText(myStory.getFrat5Option3());
             
             stage = 5;
-            System.out.println("Stage " + stage);
         }
         
         else if (eventSource == promptChoiceC && path == 1 && stage == 4) {
             String result = myStory.getFrat4Fail1();
-            System.out.println(result);
+     
             promptText.setText(result);
             removeButtons();
         }
@@ -348,24 +336,23 @@ public class MainView extends JPanel implements ActionListener{
         //STAGE 5
         else if (eventSource == promptChoiceA && path == 1 && stage == 5) {
             String result = myStory.getFrat5Fail1();
-            System.out.println(result);
+   
             promptText.setText(result);
             removeButtons();
         }
         
         else if (eventSource == promptChoiceB && path == 1 && stage == 5) {
             String result = myStory.getFratWin();
-            System.out.println(result);
+       
             promptText.setText(result);
             removeButtons();
             
             stage = 6;
-            System.out.println("Stage " + stage);
-        }
+       }
         
         else if (eventSource == promptChoiceC && path == 1 && stage == 5) {
             String result = myStory.getFrat5Fail3();
-            System.out.println(result);
+    
             promptText.setText(result);
             removeButtons();
         }
@@ -382,27 +369,27 @@ public class MainView extends JPanel implements ActionListener{
                 //STAGE 1
         if (eventSource == promptChoiceA && path == 2 && stage == 1) {
             myStory.setChoice(1);
-            System.out.println("AvgFail1");
+   
             String result = myStory.getAvg1Fail1();
-            System.out.println(result);
+
             
             promptText.setText(result);
             removeButtons();
         }
         
         else if (eventSource == promptChoiceB && path == 2 && stage == 1) {
-            System.out.println("AvgFail2");
+
             String result = myStory.getAvg1Fail2();
-            System.out.println(result);
+
             
             promptText.setText(result);
             removeButtons();
         }
         
         else if (eventSource == promptChoiceC && path == 2 && stage == 1) {
-            System.out.println("getAvg2");
+
             String result = myStory.getAvg2();
-            System.out.println(result);
+
             
             promptText.setText(result);
             promptChoiceA.setText(myStory.getAvg2Option1());
@@ -410,8 +397,8 @@ public class MainView extends JPanel implements ActionListener{
             promptChoiceC.setText(myStory.getAvg2Option3());
             
             stage = 2;
-            System.out.println("Stage " + stage);
-            //System.out.println(o_model.getPath());
+ 
+
         }
         
         //STAGE 2
@@ -419,21 +406,21 @@ public class MainView extends JPanel implements ActionListener{
         
         else if (eventSource == promptChoiceA && path == 2 && stage == 2) {
             String result = myStory.getAvg2Fail1();
-            System.out.println(result);
+
             promptText.setText(result);
             removeButtons();
         }
         
         else if (eventSource == promptChoiceB && path == 2 && stage == 2) {
             String result = myStory.getAvg2Fail2();
-            System.out.println(result);
+
             promptText.setText(result);
             removeButtons();
         }
         
         else if (eventSource == promptChoiceC && path == 2 && stage == 2) {
             String result = myStory.getAvg3();
-            System.out.println(result);
+         
             
             promptText.setText(result);
             promptChoiceA.setText(myStory.getAvg3Option1());
@@ -441,7 +428,7 @@ public class MainView extends JPanel implements ActionListener{
             promptChoiceC.setText(myStory.getAvg3Option3());
             
             stage = 3;
-            System.out.println("Stage " + stage);
+            
         }
         //STAGE 3
         
@@ -449,14 +436,12 @@ public class MainView extends JPanel implements ActionListener{
         
         else if (eventSource == promptChoiceA && path == 2 && stage == 3) {
             String result = myStory.getAvg3Fail1();
-            System.out.println(result);
             promptText.setText(result);
             removeButtons();
         }
         
            else if (eventSource == promptChoiceB && path == 2 && stage == 3) {
             String result = myStory.getAvg4();
-            System.out.println(result);
             
             promptText.setText(result);
             promptChoiceA.setText(myStory.getAvg4Option1());
@@ -464,12 +449,10 @@ public class MainView extends JPanel implements ActionListener{
             promptChoiceC.setText(myStory.getAvg4Option3());
             
             stage = 4;
-            System.out.println("Stage " + stage);
         }
         
         else if (eventSource == promptChoiceC && path == 2 && stage == 3) {
             String result = myStory.getAvg3Fail3();
-            System.out.println(result);
             promptText.setText(result);
             removeButtons();
         }
@@ -479,14 +462,12 @@ public class MainView extends JPanel implements ActionListener{
         //STAGE 4
         else if (eventSource == promptChoiceA && path == 2 && stage == 4) {
             String result = myStory.getAvg4Fail1();
-            System.out.println(result);
             promptText.setText(result);
             removeButtons();
         }
         
           else if (eventSource == promptChoiceB && path == 2 && stage == 4) {
             String result = myStory.getAvg5();
-            System.out.println(result);
             
             promptText.setText(result);
             promptChoiceA.setText(myStory.getAvg5Option1());
@@ -494,12 +475,10 @@ public class MainView extends JPanel implements ActionListener{
             promptChoiceC.setText(myStory.getAvg5Option3());
             
             stage = 5;
-            System.out.println("Stage " + stage);
         }
         
         else if (eventSource == promptChoiceC && path == 2 && stage == 4) {
             String result = myStory.getAvg4Fail3();
-            System.out.println(result);
             promptText.setText(result);
             removeButtons();
         }
@@ -509,24 +488,20 @@ public class MainView extends JPanel implements ActionListener{
         //STAGE 5
           else if (eventSource == promptChoiceA && path == 2 && stage == 5) {
             String result = myStory.getAvgWin();
-            System.out.println(result);
             promptText.setText(result);
             removeButtons();
             
             stage = 6;
-            System.out.println("Stage " + stage);
         }
         
         else if (eventSource == promptChoiceB && path == 2 && stage == 5) {
             String result = myStory.getAvg5Fail2();
-            System.out.println(result);
             promptText.setText(result);
             removeButtons();
         }
         
         else if (eventSource == promptChoiceC && path == 2 && stage == 5) {
             String result = myStory.getAvg5Fail3();
-            System.out.println(result);
             promptText.setText(result);
             removeButtons();
         }
@@ -581,7 +556,7 @@ public class MainView extends JPanel implements ActionListener{
         setChoiceC(myStory.getNerd1Option3());
         this.path = 0;
         stage = 1;
-        System.out.println("Stage " + stage);
+    
      
     }
       if(path == 1){
@@ -591,7 +566,7 @@ public class MainView extends JPanel implements ActionListener{
         setChoiceC(myStory.getFrat1Option3());
         this.path = 1;
         stage = 1;
-        System.out.println("Stage " + stage);
+       
     }
     if(path == 2){
         setPrompt(myStory.getAvg1());
@@ -600,7 +575,7 @@ public class MainView extends JPanel implements ActionListener{
         setChoiceC(myStory.getAvg1Option3());
         this.path = 2;
         stage = 1;
-        System.out.println("Stage " + stage);
+     
     }
     }
     
