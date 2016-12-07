@@ -10,6 +10,9 @@
  */
 public class StoryModel {
 int choice;
+int path;
+OptionsModel o_model = new OptionsModel();
+
     StoryModel(){
      
     }
@@ -22,6 +25,15 @@ public int getChoice(){
     return choice;
 }
 
+public void setPath(int myPath) {
+path = myPath;    
+}
+
+public int getPath() {
+    return o_model.getPath();
+}
+
+//NERD
 public String getNerd1(){
     return "You have a very important midterm tommorow and it is 1am. What do you do? ";
 }
@@ -142,10 +154,11 @@ public String getNerd5Option3(){
     return "Scribble over it furiously.";
 }
 
-public String winNerd(){
-    return "You wake up in class with a finished midterm. The smoke clears from your paper as time runs out. You get 101%!";
+public String getWinNerd(){
+    return "You wake up in class with a finished midterm. The smoke clears from your paper as time runs out. You get 101%! YOU WIN";
 }
 
+//FRAT GUY
 public String getFrat1(){
     return "You are rushing your desired frat. What do you wear?";
 }
@@ -270,6 +283,7 @@ public String getFrat5Fail3(){
     return "The spaceship slowly tips, eventually toppling over and crushing you like a vending machine would.";
 }
 
+//AVERAGE
 public String getAvg1(){
     return "You have to finish a huge project, but your best friend has invited you out to party. What do you do?";
 }

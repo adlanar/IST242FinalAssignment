@@ -30,17 +30,17 @@ public class StoryController {
         public void actionPerformed(ActionEvent e) {
                 JButton clickSource = (JButton) e.getSource();
                 
-                if (clickSource == m_view.getChoiceA()) {
-                    s_model.setChoice(1);
-                }
-                
-                if (clickSource == m_view.getChoiceB()) {
-                    s_model.setChoice(2);
-                }
-                
-                if (clickSource == m_view.getChoiceC()) {
-                    s_model.setChoice(3);
-                }
+//                if (clickSource == m_view.getChoiceA()) {
+//                    s_model.setChoice(1);
+//                }
+//                
+//                if (clickSource == m_view.getChoiceB()) {
+//                    s_model.setChoice(2);
+//                }
+//                
+//                if (clickSource == m_view.getChoiceC()) {
+//                    s_model.setChoice(3);
+//                }
     
         }//action performed
    

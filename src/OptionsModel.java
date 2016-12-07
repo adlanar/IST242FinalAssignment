@@ -16,6 +16,10 @@ public class OptionsModel {
      private String studentType;
      private int path;
      
+     OptionsModel() {
+         
+     }
+     
      public String getName() {
         return name;
      }
