@@ -1,20 +1,12 @@
-//ours
+
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 
 
-/**
- *
- *  The Nav View exposes methods to the Nav Controller that allow it to switch panels
- * 
- * @author jrimland
- */
 public class NavView extends JFrame{
     
     NavModel model;
     NavViewPanel nVpanel;
-    
-    // adam added 12/6 
     MainView m_view;
     
     NavView(NavModel model)
@@ -48,7 +40,6 @@ public class NavView extends JFrame{
         nVpanel.addMain(m_view);        
     }
     
-    // Adam added same format as template 
     public void switchToInstuctionsPanel(InstructionsView i_view)
     {
         nVpanel.removeSplash();
@@ -88,8 +79,7 @@ public class NavView extends JFrame{
     {    
         nVpanel.menu.creditsButton.addActionListener(al);
     } 
-    
-    // adam added 12/5
+
     public void addPromptChoiceAButtonListener(ActionListener al) 
     {    
         nVpanel.m_view.promptChoiceA.addActionListener(al);

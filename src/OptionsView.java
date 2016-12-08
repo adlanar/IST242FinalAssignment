@@ -1,5 +1,4 @@
 
-//ours
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -8,18 +7,11 @@ import javax.swing.JPanel;
 import javax.swing.JSlider;
 import javax.swing.JTextField;
 
-/**
- *
- * @author jrimland-air
- */
 public class OptionsView extends JPanel{
         JTextField nameText;
         JLabel EnterDiff;
         JLabel typeText;
         JSlider difficulty;
-        
-        //adam added
-        //adlan fixed buttons
         JButton nerdButton;
         JButton avgPersonButton;
         JButton fratGuyButton;
@@ -41,7 +33,6 @@ public class OptionsView extends JPanel{
 
             EnterDiff = new JLabel("  Enter Age:");
             
-            //adam added
             JLabel buttonsLabel = new JLabel("Pick your character type: ");
             
             nerdButton = new JButton("Nerd");
@@ -54,7 +45,6 @@ public class OptionsView extends JPanel{
             
             JPanel content = new JPanel();
             
-            //adlan organized layouts
             GridLayout grid = new GridLayout(0,1);
             content.setLayout(grid);
             content.add(nameText);

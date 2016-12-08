@@ -1,11 +1,8 @@
-//ours
+
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 
-/**
- *
- * @author jrimland
- */
+
 public class NavViewPanel extends JPanel{
 
     NavViewBottomMenuPanel menu;
@@ -13,7 +10,6 @@ public class NavViewPanel extends JPanel{
        
     OptionsView o_view;
     MainView m_view;
-    // Adam added
     InstructionsView i_view;
     CreditsView c_view;
     
@@ -27,12 +23,11 @@ public class NavViewPanel extends JPanel{
         add(splash, BorderLayout.CENTER);                        
     }
     
-    //Note: Splash scrren is only shown on startup.  No need to navigate back to it.
     
     
     public void addOptions(OptionsView o_view)
     {
-        this.o_view = o_view; //maintain handle to this view so we can remove it
+        this.o_view = o_view; 
         add(o_view, BorderLayout.CENTER);
         revalidate();
         repaint();
@@ -40,25 +35,23 @@ public class NavViewPanel extends JPanel{
 
     public void addMain(MainView m_view)
     {
-        this.m_view = m_view;  //maintain handle to this view so we can remove it
+        this.m_view = m_view;  
         add(m_view, BorderLayout.CENTER);
         revalidate();
         repaint();
     }
         
-   // Added by Adam used same format as the others for the instructions view
     public void addInstructions(InstructionsView i_view)
     {
-        this.i_view = i_view;  //maintain handle to this view so we can remove it
+        this.i_view = i_view; 
         add(i_view, BorderLayout.CENTER);
         revalidate();
         repaint();
     }
     
-    //adam added
     public void addCredits(CreditsView c_view)
     {
-        this.c_view = c_view;  //maintain handle to this view so we can remove it
+        this.c_view = c_view;  
         add(c_view, BorderLayout.CENTER);
         revalidate();
         repaint();
@@ -70,7 +63,6 @@ public class NavViewPanel extends JPanel{
         revalidate();
         repaint();
     }
-    
       
     public void removeOptions()
     {
@@ -84,14 +76,12 @@ public class NavViewPanel extends JPanel{
             remove(this.m_view);
     }    
     
-    // Added by Adam method to remove Intsructions
     public void removeInstructions()
     {
         if (this.i_view != null)
             remove(this.i_view);
     } 
     
-    //adam added
      public void removeCredits()
     {
         if (this.c_view != null)

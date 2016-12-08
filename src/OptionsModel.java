@@ -1,15 +1,3 @@
-//ours
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author jrimland-air
- */
-//adlan added
 public class OptionsModel {
      private String name;
      private int diffLevel;

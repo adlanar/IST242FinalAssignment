@@ -1,13 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- *
- * @author Aaron Yu
- */
 public class StoryModel {
 
 int choice;
@@ -137,7 +128,7 @@ public String getNerd4(){
 
 
 public String getNerd4Option1(){
-    return ".Slay it with a sword.";
+    return "Slay it with a sword.";
 }
 
 
@@ -147,7 +138,7 @@ public String getNerd4Fail1(){
 
 
 public String getNerd4Option2(){
-    return "Slay it with a pencil";
+    return "Slay it with a pencil.";
 }
 
 
@@ -192,7 +183,7 @@ public String getNerd5Option3(){
 
 
 public String getWinNerd(){
-    return "You wake up in class with a finished midterm. The smoke clears from your paper as time runs out. You get 101%! YOU WIN!";
+    return "You wake up in class with a finished midterm. The smoke clears from your paper as time runs out. You get 101%!";
 }
 
 
@@ -338,7 +329,7 @@ public String getFrat5Option2(){
 
 
 public String getFratWin(){
-    return "The spaceship roars to life and safely takes you back home, where you are hailed as a hero by the frat. YOU WIN!";
+    return "The spaceship roars to life and safely takes you back home, where you are hailed as a hero by the frat.";
 }
 
 
@@ -394,7 +385,7 @@ public String getAvg2Option1(){
 
 
 public String getAvg2Fail1(){
-    return "Right before you reach for a drink, you get ID'd by the party thrower. He kicks you out for being 20.9 years old and kicks you out.";
+    return "Right before you reach for a drink, you get ID'd by the party thrower. He kicks you out for being 20.9 years old.";
 }
 
 

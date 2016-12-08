@@ -1,4 +1,3 @@
-//ours
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -6,17 +5,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
-/**
- *
- *  The View for your main gameplay or user interaction could go here.
- * 
- * @author jrimland
- */
-
-
-//GAME MECHANISM by Adlan
-//Adlan added restart button
 
 public class MainView extends JPanel implements ActionListener{
     
@@ -70,7 +58,7 @@ public class MainView extends JPanel implements ActionListener{
         content.add(promptChoiceB);
         content.add(promptChoiceC);
         content.add(restartButton);
-        //content.add(gameOverScreen);
+ 
         
         add(content);
         
@@ -539,7 +527,6 @@ public class MainView extends JPanel implements ActionListener{
     }
     
     
-    //SCENES
     public void startGame(int path) {
         
     promptChoiceA.setVisible(true);

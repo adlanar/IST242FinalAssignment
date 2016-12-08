@@ -1,12 +1,3 @@
-// ours
-/**
- *
- *  The Nav Controller handles logic to switch between Views
- * 
- * @author jrimland
- */
-
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -15,24 +6,12 @@ public class NavController {
     
     NavModel n_model;
     NavView n_view;
-    
-    //Instance Variables for Options Model, View, and Controller
     OptionsModel o_model;
     OptionsView o_view;
     OptionsController o_Controller;
-    
-
-    // added by adam on 12/5
-    StoryModel s_model;
-    
-           
-    // TODO: Create instances of your MainModel and MainController once you implement them
+    StoryModel s_model;        
     MainView m_view;
-    
-    // added by adam creates instuctions view
     InstructionsView i_view = new InstructionsView();
-    
-    // added by adam
     CreditsView c_view = new CreditsView();
     
     
@@ -49,10 +28,8 @@ public class NavController {
         n_view.addOptionsButtonListener(new OptionsButtonListener());
         n_view.addMainButtonListener(new MainButtonListener());
         
-       // added by adam listener for instructions button
         n_view.addInstructionsButtonListener(new InstructionsButtonListener());
         
-        //added by adam
         n_view.addCreditsButtonListener(new CreditsButtonListener());
         
               
@@ -60,7 +37,6 @@ public class NavController {
     class OptionsButtonListener implements ActionListener {            
         public void actionPerformed(ActionEvent e)
         {            
-            //Pass an Options View object to our Navigation View
             n_view.switchToOptionsPanel(o_view);
         }
     }     
@@ -68,30 +44,26 @@ public class NavController {
     class MainButtonListener implements ActionListener {            
         public void actionPerformed(ActionEvent e)
         {            
-            //Pass a Main View object to our Navigation View
             n_view.switchToMainPanel(m_view);
             m_view.setOptionsData(o_model.getName(), o_view.getDiff(), o_model.getStudentType(), o_model.getPath());
         }
     }
-        
-    // added by adam
+
     class InstructionsButtonListener implements ActionListener {            
         public void actionPerformed(ActionEvent e)
         {            
-            //Pass a  View object to our Navigation View
             n_view.switchToInstuctionsPanel(i_view);
         }
     }
-    //added by adam   
+
     class CreditsButtonListener implements ActionListener {            
         public void actionPerformed(ActionEvent e)
         {            
-            //Pass a  View object to our Navigation View
             n_view.switchToCreditsPanel(c_view);
         }
             
     }         
     
-    //TODO: Add listeners on buttons to switch to other Panels
+  
     
 }
