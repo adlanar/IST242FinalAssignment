@@ -31,7 +31,7 @@ public class OptionsModel {
      public int getPath() {
          return path;
      }
-     
+          
      public void setName(String playerName) {
          name = playerName;
      }

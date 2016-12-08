@@ -2,6 +2,7 @@
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -26,9 +27,11 @@ public class MainView extends JPanel implements ActionListener{
     public JButton promptChoiceB;
     public JButton promptChoiceC;
     public JButton restartButton;
+    public JLabel gameOverScreen;
     
     StoryModel myStory = new StoryModel();
     OptionsModel o_model = new OptionsModel();
+    OptionsView o_view = new OptionsView(o_model);
     
     int path;
     int stage;
@@ -51,6 +54,8 @@ public class MainView extends JPanel implements ActionListener{
         restartButton = new JButton("");
         restartButton.addActionListener(this);
         
+        gameOverScreen = new JLabel(new ImageIcon("src/images/gameover.png"));
+        
         JPanel content = new JPanel();
         
         GridLayout grid = new GridLayout(0,1);
@@ -62,6 +67,7 @@ public class MainView extends JPanel implements ActionListener{
         content.add(promptChoiceB);
         content.add(promptChoiceC);
         content.add(restartButton);
+        //content.add(gameOverScreen);
         
         add(content);
         
@@ -103,8 +109,6 @@ public class MainView extends JPanel implements ActionListener{
             promptChoiceC.setText(myStory.getNerd2Option3());
             
             stage = 2;
- 
-        
         }
         
         //STAGE 2
@@ -124,8 +128,7 @@ public class MainView extends JPanel implements ActionListener{
             promptChoiceB.setText(myStory.getNerd3Option2());
             promptChoiceC.setText(myStory.getNerd3Option3());
             
-            stage = 3;
-            
+            stage = 3;    
         }
         
         else if (eventSource == promptChoiceC && path == 0 && stage == 2) {
@@ -160,7 +163,6 @@ public class MainView extends JPanel implements ActionListener{
             promptChoiceC.setText(myStory.getNerd4Option3());
             
             stage = 4;
-
         }
         
         //STAGE 4
@@ -186,8 +188,7 @@ public class MainView extends JPanel implements ActionListener{
             promptChoiceB.setText(myStory.getNerd5Option2());
             promptChoiceC.setText(myStory.getNerd5Option3());
             
-            stage = 5;
-           
+            stage = 5;   
         }
         
         //STAGE 5
@@ -213,7 +214,6 @@ public class MainView extends JPanel implements ActionListener{
             
             restartButton.setText("You Won! Restart?");
             stage = 6;
-         
         }
         
         //FRAT PATH
@@ -227,7 +227,6 @@ public class MainView extends JPanel implements ActionListener{
             promptChoiceC.setText(myStory.getFrat2Option3());
             
             stage = 2;
-
         }        
                 
         else if (eventSource == promptChoiceB && path == 1 && stage == 1) {
@@ -296,7 +295,6 @@ public class MainView extends JPanel implements ActionListener{
             promptChoiceC.setText(myStory.getFrat4Option3());
             
             stage = 4;
-   
         }
         
         //STAGE 4
@@ -490,9 +488,9 @@ public class MainView extends JPanel implements ActionListener{
         }
     }
     
-    public void setOptionsData(String name, int difficulty, String studentType, int playerPath) {
+    public void setOptionsData(String name, int age, String studentType, int playerPath) {
         if (name != null && studentType != "-Type not selected-"){
-        mainStatus.setText("Name: " + name + " Difficulty: " + difficulty + " Type: " + studentType);
+        mainStatus.setText("Name: " + name + ", Age: " + age + ", Type: " + studentType);
         startGame(playerPath);
         }
     }
@@ -519,7 +517,8 @@ public class MainView extends JPanel implements ActionListener{
         promptChoiceC.setVisible(false);
         
         restartButton.setVisible(true);
-        restartButton.setText("You Lost! Restart?");
+        restartButton.setText("You Lose! Restart?");
+        //gameOverScreen.setVisible(true);
     }
     
     
@@ -531,6 +530,7 @@ public class MainView extends JPanel implements ActionListener{
     promptChoiceC.setVisible(true);
    
     restartButton.setVisible(false);
+    //gameOverScreen.setVisible(false);
      
     if(path == 0){
         setPrompt(myStory.getNerd1());

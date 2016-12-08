@@ -34,12 +34,12 @@ public class OptionsView extends JPanel{
                    
             
             nameText = new JTextField("--Enter Player Name--");
-            difficulty = new JSlider(JSlider.HORIZONTAL, 1,10,5);
+            difficulty = new JSlider(JSlider.HORIZONTAL, 18,25,20);
             difficulty.setMajorTickSpacing(1);
             difficulty.setPaintLabels(true);
             difficulty.setPaintTicks(true);
 
-            EnterDiff = new JLabel("  Enter Difficulty:");
+            EnterDiff = new JLabel("  Enter Age:");
             
             //adam added
             JLabel buttonsLabel = new JLabel("Pick your character type: ");
