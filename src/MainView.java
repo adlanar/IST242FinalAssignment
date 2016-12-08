@@ -28,6 +28,7 @@ public class MainView extends JPanel implements ActionListener{
     public JButton promptChoiceC;
     public JButton restartButton;
     public JLabel gameOverScreen;
+    public JLabel youWonScreen;
     
     StoryModel myStory = new StoryModel();
     OptionsModel o_model = new OptionsModel();
@@ -55,6 +56,8 @@ public class MainView extends JPanel implements ActionListener{
         restartButton.addActionListener(this);
         
         gameOverScreen = new JLabel(new ImageIcon("src/images/gameover.png"));
+        
+        youWonScreen = new JLabel(new ImageIcon("src/images/winscreen.png"));
         
         JPanel content = new JPanel();
         
@@ -213,7 +216,12 @@ public class MainView extends JPanel implements ActionListener{
             removeButtons();
             
             restartButton.setText("You Won! Restart?");
+            gameOverScreen.setVisible(false);
+            youWonScreen.setVisible(true);
+            add(youWonScreen);
+            
             stage = 6;
+            
         }
         
         //FRAT PATH
@@ -340,8 +348,13 @@ public class MainView extends JPanel implements ActionListener{
             promptText.setText(result);
             removeButtons();
             restartButton.setText("You Won! Restart?");
+            gameOverScreen.setVisible(false);
+            youWonScreen.setVisible(true);
+            add(youWonScreen);
+            
             
             stage = 6;
+            
        }
         
         else if (eventSource == promptChoiceC && path == 1 && stage == 5) {
@@ -466,7 +479,9 @@ public class MainView extends JPanel implements ActionListener{
             promptText.setText(result);
             removeButtons();
             restartButton.setText("You Won! Restart?");
-            
+            gameOverScreen.setVisible(false);
+            youWonScreen.setVisible(true);
+            add(youWonScreen);
             stage = 6;
         }
         
@@ -518,7 +533,9 @@ public class MainView extends JPanel implements ActionListener{
         
         restartButton.setVisible(true);
         restartButton.setText("You Lose! Restart?");
-        //gameOverScreen.setVisible(true);
+        youWonScreen.setVisible(false);
+        gameOverScreen.setVisible(true);
+        add(gameOverScreen);
     }
     
     
@@ -530,7 +547,8 @@ public class MainView extends JPanel implements ActionListener{
     promptChoiceC.setVisible(true);
    
     restartButton.setVisible(false);
-    //gameOverScreen.setVisible(false);
+    gameOverScreen.setVisible(false);
+    youWonScreen.setVisible(false);
      
     if(path == 0){
         setPrompt(myStory.getNerd1());
